@@ -1,4 +1,4 @@
-# WHEN U CLONE THIS:
+# AFTER U CLONE THIS:
 
 `npm install` or `npm i`
 
