@@ -1,1 +1,7 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+# WHEN U CLONE THIS:
+
+`npm install` or `npm i`
+
+when you open this project in vsc so next is installed.
+
+And when you want to run it you do: `npm run dev` and it runs server PERIOD!
