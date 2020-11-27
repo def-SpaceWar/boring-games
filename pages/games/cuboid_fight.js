@@ -1,11 +1,11 @@
 import Head from "next/head";
-import { GlobalStyle, CONSTANTS, Navbar } from "./index";
+import { GlobalStyle, CONSTANTS, Navbar } from "../index";
 
 export default function Home() {
   return (
     <div className="container">
       <Head>
-        <title>About | {CONSTANTS.siteName}</title>
+        <title>Tank Battle | {CONSTANTS.siteName}</title>
         <link
           rel="shortcut icon"
           type="image/png"
@@ -19,21 +19,36 @@ export default function Home() {
 
       <Navbar />
 
-      <main>
+      <main
+        style={{
+          overflow: "hidden",
+        }}
+      >
         <br />
         <br />
         <br />
         <br />
         <br />
 
-        <h1>About Us</h1>
+        <h1>Cuboid Fight!</h1>
 
-        <p>we are dum.</p>
+        <iframe src="https://cuboid-fight.netlify.app/"></iframe>
       </main>
 
       <GlobalStyle />
 
-      <style global jsx>{``}</style>
+      <style global jsx>{`
+        body {
+          overflow: hidden;
+        }
+
+        iframe {
+          width: 1920px;
+          height: 880px;
+          border: 0;
+          overflow: hidden;
+        }
+      `}</style>
     </div>
   );
 }

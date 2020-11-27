@@ -1,11 +1,13 @@
 import Head from "next/head";
 import { GlobalStyle, CONSTANTS, Navbar } from "./index";
 
+var contactEmails = " boring-games@gmail.com";
+
 export default function Home() {
   return (
     <div className="container">
       <Head>
-        <title>About | {CONSTANTS.siteName}</title>
+        <title>Contact | {CONSTANTS.siteName}</title>
         <link
           rel="shortcut icon"
           type="image/png"
@@ -26,9 +28,11 @@ export default function Home() {
         <br />
         <br />
 
-        <h1>About Us</h1>
+        <h1>Contact Us</h1>
 
-        <p>we are dum.</p>
+        <p>Aryan Ahire | Discord: @def_SpaceWar: {contactEmails}</p>
+        <p>Discord: @Taptaplit: {contactEmails}</p>
+        <p>Discord: @Glowstik: {contactEmails}</p>
       </main>
 
       <GlobalStyle />

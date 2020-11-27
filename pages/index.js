@@ -1,7 +1,27 @@
 import Head from "next/head";
 import Image from "next/image";
+import { createGlobalStyle } from "styled-components";
 
-export var CONSTANTS = {
+export const GlobalStyle = createGlobalStyle`
+  body {
+    color: white;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins";
+    scroll-behavior: smooth;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background-color: #21212f;
+  }
+
+  main {
+    padding: 16px;
+  }
+`;
+
+export const CONSTANTS = {
   siteName: "Boring Games",
 };
 
@@ -24,7 +44,7 @@ export function Navbar() {
       <a href="/about" className="nav">
         <h3>About</h3>
       </a>
-      <a href="/contact" className="nav">
+      <a href="/contacts" className="nav">
         <h3>Contact</h3>
       </a>
 
@@ -32,7 +52,7 @@ export function Navbar() {
         .header {
           margin: 0;
           padding: 0;
-          background-color: #000;
+          background-color: #13121f;
           display: flex;
           height: 100px;
           width: 100%;
@@ -53,12 +73,12 @@ export function Navbar() {
           text-decoration: none;
           margin-top: 0.5%;
           font-size: 20px;
-          color: red;
+          color: #af0fff;
+          transition: 0.7s;
         }
 
         .nav:hover {
           color: white;
-          background-color: gray;
         }
 
         .logo {
@@ -100,24 +120,8 @@ export default function Home() {
         <h1>Welcome to {CONSTANTS.siteName}!</h1>
       </main>
 
-      <style global jsx>{`
-        body {
-          color: white;
-          margin: 0;
-          padding: 0;
-          font-family: "Poppins";
-          scroll-behavior: smooth;
-          background-size: cover;
-          background-attachment: fixed;
-          overflow-x: hidden;
-          overflow-y: scroll;
-          background-color: gray;
-        }
-
-        main {
-          padding: 16px;
-        }
-      `}</style>
+      <GlobalStyle />
+      <style global jsx>{``}</style>
     </div>
   );
 }

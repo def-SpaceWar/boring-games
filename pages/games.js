@@ -1,5 +1,10 @@
 import Head from "next/head";
-import { CONSTANTS, Navbar } from "./index";
+import { GlobalStyle, CONSTANTS, Navbar } from "./index";
+
+const gameList = [
+  ["Cuboid Fight", "cuboid_fight"],
+  ["Run 3", "run3"],
+];
 
 export default function Home() {
   return (
@@ -25,26 +30,53 @@ export default function Home() {
         <br />
         <br />
         <br />
+        <center>
+          <h1>Welcome to the Games!</h1>
+          <h3>Have a blast of fun playing our games all day, and everyday!</h3>
+        </center>
 
-        <h1>Welcome to the GAMES!</h1>
+        {gameList.map((arr) => (
+          <center>
+            <div class="flex-box">
+              <a href={"/games/" + arr[1]}>
+                <button class="btn">{arr[0]}</button>
+              </a>
+            </div>
+          </center>
+        ))}
       </main>
 
+      <GlobalStyle />
+
       <style global jsx>{`
-        body {
-          color: white;
-          margin: 0;
-          padding: 0;
-          font-family: "Poppins";
-          scroll-behavior: smooth;
-          background-size: cover;
-          background-attachment: fixed;
-          overflow-x: hidden;
-          overflow-y: scroll;
-          background-color: gray;
+        .flex-box {
+          width: 75%;
+          display: flex;
+          justify-content: space-around;
+          flex-direction: row;
+          flex-wrap: wrap;
+          padding: 10px;
         }
 
-        main {
-          padding: 16px;
+        .btn {
+          background-color: #21212f;
+          border: 3px solid #af0fff;
+          color: #af0fff;
+          font-weight: bold;
+          width: 150px;
+          height: 30px;
+          font-size: 16px;
+          border-radius: 10px;
+          transition: 0.7s;
+        }
+
+        .btn:hover {
+          background-color: #af0fff;
+          font-weight: bolder;
+          color: black;
+          width: 200px;
+          height: 35px;
+          font-size: 20px;
         }
       `}</style>
     </div>
