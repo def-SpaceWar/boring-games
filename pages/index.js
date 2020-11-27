@@ -1,96 +1,38 @@
 import Head from "next/head";
 import Image from "next/image";
 
-var CONSTANTS = {
+export var CONSTANTS = {
   siteName: "Boring Games",
-  darkMode: true,
 };
 
-export default function Home() {
-  var title = "Boring-Games";
-
-  function toggleDarkMode() {
-    console.log(CONSTANTS.darkMode);
-    CONSTANTS.darkMode = !CONSTANTS.darkMode;
-  }
-
+export function Navbar() {
   return (
-    <div class="container">
-      <Head>
-        <title>Home | {CONSTANTS.siteName}</title>
-        <link
-          rel="shortcut icon"
-          type="image/png"
-          href="/Boring-Games-Logo.png"
-        ></link>
-        <link
-          href="https://fonts.googleapis.com/css?family=Poppins"
-          rel="stylesheet"
-        ></link>
-      </Head>
-
-      <main>
-        <div
-          class="header"
-          style={{
-            "background-color": CONSTANTS.darkMode ? `black` : "white",
-          }}
-        >
-          <button onClick={toggleDarkMode}>Change Dark Mode</button>
-          <Image
-            src="/Boring-Games-Logo.png"
-            alt="Logo"
-            width={75}
-            height={75}
-            class="Logo"
-          />
-          <h1 class="space"> </h1>
-          <a href="game-page.html" class="nav">
-            <h3>Games</h3>
-          </a>
-          <a href="about.html" class="nav">
-            <h3>About</h3>
-          </a>
-          <a href="contact.html" class="nav">
-            <h3>Contact</h3>
-          </a>
-        </div>
-      </main>
+    <div className="header">
+      <a href="/">
+        <Image
+          src="/boringGamesLogoNavbar.png"
+          alt="Logo"
+          width={100}
+          height={100}
+          className="Logo"
+        />
+      </a>
+      <h1 className="space"> </h1>
+      <a href="/games" className="nav">
+        <h3>Games</h3>
+      </a>
+      <a href="/about" className="nav">
+        <h3>About</h3>
+      </a>
+      <a href="/contact" className="nav">
+        <h3>Contact</h3>
+      </a>
 
       <style jsx>{`
-        .nav {
-          float: left;
-          font-family: "Poppins";
-          flex-direction: center;
-        }
         .header {
-        }
-        body {
           margin: 0;
           padding: 0;
-        }
-      `}</style>
-
-      <style jsx global>{`
-        body {
-          margin: 0;
-          padding: 0;
-          font-family: "Poppins";
-          scroll-behavior: smooth;
-          background-size: cover;
-          background-attachment: fixed;
-          overflow-x: hidden;
-          overflow-y: scroll;
-        }
-
-        .logo {
-          width: 75px;
-          margin-top: 1%;
-          margin-left: 1%;
-          margin-bottom: 1%;
-        }
-
-        .header {
+          background-color: #000;
           display: flex;
           height: 100px;
           width: 100%;
@@ -99,7 +41,14 @@ export default function Home() {
           z-index: 1000000;
         }
 
+        .space {
+          margin-left: 35%;
+        }
+
         .nav {
+          float: left;
+          font-family: "Poppins";
+          flex-direction: center;
           margin-left: 10%;
           text-decoration: none;
           margin-top: 0.5%;
@@ -108,11 +57,65 @@ export default function Home() {
         }
 
         .nav:hover {
-          color: black;
+          color: white;
+          background-color: gray;
         }
 
-        .space {
-          margin-left: 35%;
+        .logo {
+          width: 75px;
+          margin-top: 1%;
+          margin-left: 1%;
+          margin-bottom: 1%;
+        }
+      `}</style>
+    </div>
+  );
+}
+
+export default function Home() {
+  return (
+    <div className="container">
+      <Head>
+        <title>Home | {CONSTANTS.siteName}</title>
+        <link
+          rel="shortcut icon"
+          type="image/png"
+          href="/boringGamesLogoShortcut.png"
+        ></link>
+        <link
+          href="https://fonts.googleapis.com/css?family=Poppins"
+          rel="stylesheet"
+        ></link>
+      </Head>
+
+      <Navbar />
+
+      <main>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <h1>Welcome to {CONSTANTS.siteName}!</h1>
+      </main>
+
+      <style global jsx>{`
+        body {
+          color: white;
+          margin: 0;
+          padding: 0;
+          font-family: "Poppins";
+          scroll-behavior: smooth;
+          background-size: cover;
+          background-attachment: fixed;
+          overflow-x: hidden;
+          overflow-y: scroll;
+          background-color: gray;
+        }
+
+        main {
+          padding: 16px;
         }
       `}</style>
     </div>
