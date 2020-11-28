@@ -4,6 +4,7 @@ import { GlobalStyle, CONSTANTS, Navbar } from "./index";
 const gameList = [
   ["Cuboid Fight", "cuboid_fight"],
   ["Run 3", "run3"],
+  ["Paper.IO", "paper_io"]
 ];
 
 export default function Home() {
@@ -31,8 +32,8 @@ export default function Home() {
         <br />
         <br />
         <center>
-          <h1>Welcome to the Games!</h1>
-          <h3>Have a blast of fun playing our games all day, and everyday!</h3>
+          <h1>Welcome To Boring GAMES!</h1>
+          <h3>*Not all games are ours*</h3>
         </center>
 
         {gameList.map((arr) => (

@@ -13,12 +13,21 @@ export const GlobalStyle = createGlobalStyle`
     background-attachment: fixed;
     overflow-x: hidden;
     overflow-y: scroll;
-    background-color: #21212f;
+    background-color: #21212F;
   }
+
+  
+::-webkit-scrollbar {
+  display: none;
+}
+
+.element::-webkit-scrollbar { width: 0 !important }
+
 
   main {
     padding: 16px;
   }
+
 `;
 
 export const CONSTANTS = {
@@ -29,15 +38,18 @@ export function Navbar() {
   return (
     <div className="header">
       <a href="/">
-        <Image
-          src="/boringGamesLogoNavbar.png"
-          alt="Logo"
-          width={100}
-          height={100}
-          className="Logo"
-        />
+        <div className="logo">
+          <Image
+            src="/boringGamesLogoNavbar.png"
+            alt="Logo"
+            width={75}
+            height={75}
+          />
+        </div>
       </a>
       <h1 className="space"> </h1>
+      
+      
       <a href="/games" className="nav">
         <h3>Games</h3>
       </a>
@@ -49,10 +61,17 @@ export function Navbar() {
       </a>
 
       <style jsx>{`
+        body{
+          margin: 0;
+          padding: 0;
+          overflow-x: hidden;
+          overflow-y: hidden;
+        }
+
         .header {
           margin: 0;
           padding: 0;
-          background-color: #13121f;
+          background-color: #13121F;
           display: flex;
           height: 100px;
           width: 100%;
@@ -62,7 +81,7 @@ export function Navbar() {
         }
 
         .space {
-          margin-left: 35%;
+          margin-left: 40%;
         }
 
         .nav {
@@ -79,19 +98,18 @@ export function Navbar() {
 
         .nav:hover {
           color: white;
+          font-family: "Poppins";
+          font-style: bolder;
         }
 
         .logo {
-          width: 75px;
-          margin-top: 1%;
-          margin-left: 1%;
-          margin-bottom: 1%;
+          margin-top: 15%;
         }
+
       `}</style>
     </div>
   );
 }
-
 export default function Home() {
   return (
     <div className="container">
@@ -111,17 +129,38 @@ export default function Home() {
       <Navbar />
 
       <main>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-
-        <h1>Welcome to {CONSTANTS.siteName}!</h1>
+        <div className="main">
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <center>
+            <h1 class="title">Welcome to {CONSTANTS.siteName}!</h1>
+          </center>
+        </div>
       </main>
-
       <GlobalStyle />
-      <style global jsx>{``}</style>
+      <style global jsx>{`
+            .main {
+                width: 97.7%;
+                height: 100%;
+                position: absolute;
+                background: linear-gradient(45deg, #30f1de, #b11ee1);
+                background-size: 600% 100%;
+                animation: gradient 5s linear infinite;
+                animation-direction: alternate;
+            }
+            @keyframes gradient {
+                0% {background-position: 0%}
+                100% {background-position: 100%}
+            }
+
+            .title{
+              margin-top: 17%;
+              font-size: 50px;
+            }
+      `}</style>
     </div>
   );
 }

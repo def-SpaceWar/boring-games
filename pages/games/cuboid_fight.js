@@ -2,10 +2,12 @@ import Head from "next/head";
 import { GlobalStyle, CONSTANTS, Navbar } from "../index";
 
 export default function Home() {
+  const scale = 0.75;
+
   return (
     <div className="container">
       <Head>
-        <title>Tank Battle | {CONSTANTS.siteName}</title>
+        <title>Cuboid Fight | {CONSTANTS.siteName}</title>
         <link
           rel="shortcut icon"
           type="image/png"
@@ -46,6 +48,12 @@ export default function Home() {
           width: 1920px;
           height: 880px;
           border: 0;
+          -ms-transform: scale(${scale});
+          -moz-transform: scale(${scale});
+          -o-transform: scale(${scale});
+          -webkit-transform: scale(${scale});
+          transform: scale(${scale});
+
           overflow: hidden;
         }
       `}</style>
