@@ -1,7 +1,27 @@
+import React from "react";
 import Head from "next/head";
 import { GlobalStyle, CONSTANTS, Navbar } from "../index";
 
 export default function Home() {
+  // Stap the scrolling
+  React.useEffect(() => {
+    // Runs on client-side so `window` object is finally available
+
+    window.addEventListener(
+      "keydown",
+      (e) => {
+        if (
+          ["ArrowLeft", "ArrowUp", "ArrowRight", "ArrowDown", "Space"].indexOf(
+            e.key
+          ) > -1
+        ) {
+          e.preventDefault();
+        }
+      },
+      false
+    );
+  });
+
   const scale = 0.75;
 
   return (
