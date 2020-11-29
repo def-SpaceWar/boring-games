@@ -28,6 +28,19 @@ export const GlobalStyle = createGlobalStyle`
     padding: 16px;
   }
 
+  .credit{
+    text-align: center;
+    font-weight: bolder;
+    font-size: 20px;
+    margin-right: 1%;
+    color: #af0fff;
+    transition: 0.7s;
+  }
+
+  .credit:hover{
+    color: white;
+    font-size: 25px;
+  }
 `;
 
 export const CONSTANTS = {

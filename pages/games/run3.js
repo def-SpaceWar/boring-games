@@ -3,12 +3,12 @@ import { GlobalStyle, CONSTANTS, Navbar } from "../index";
 import {Credit} from "../games";
 
 export default function Home() {
-  const scale = 0.75;
+  const scale = 0.80;
 
   return (
     <div className="container">
       <Head>
-        <title>Cuboid Fight | {CONSTANTS.siteName}</title>
+        <title>Run 3| {CONSTANTS.siteName}</title>
         <link
           rel="shortcut icon"
           type="image/png"
@@ -33,22 +33,21 @@ export default function Home() {
         <br />
         <br />
 
-        <h1>Cuboid Fight!</h1>
-
-        <iframe src="https://cuboid-fight.netlify.app/"></iframe>
+        <h1>Run 3!</h1>
+        <center>
+            <iframe src="https://www.gameflare.com/embed/run-3/" frameborder="0" scrolling="no" width="800" height="635" allowfullscreen></iframe>
+        </center>
       </main>
 
       <GlobalStyle />
 
       <style global jsx>{`
-        body {
+        body {  
           overflow: hidden;
         }
 
         iframe {
-          width: 1920px;
-          height: 880px;
-          border: 0;
+          width: 100%;
           -ms-transform: scale(${scale});
           -moz-transform: scale(${scale});
           -o-transform: scale(${scale});
@@ -59,7 +58,7 @@ export default function Home() {
         }
       `}</style>
       <div class="credit">
-        <p>{Credit[2][0]}</p>
+        <p>{Credit[1][0]}</p>
       </div>
     </div>
   );

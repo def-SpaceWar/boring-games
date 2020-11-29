@@ -4,8 +4,23 @@ import { GlobalStyle, CONSTANTS, Navbar } from "./index";
 const gameList = [
   ["Cuboid Fight", "cuboid_fight"],
   ["Run 3", "run3"],
-  ["Paper.IO", "paper_io"]
+  ["Paper.IO", "paper-io"],
+  ["8 Ball Pool","8-ball-pool"],
+  ["Slime Lab 2","slime-lab-2"],
+  ["Ninja","ninja"],
+  ["F1 Racer","f1-racer"],
+  ["Learn to Fly 2","learn-to-fly-2"],
+  ["Duck Life 3","duck-life-3evo"],
+  ["Continuity","continuity"],
 ];
+
+export const Credit = [
+  ["This game is by Miniclip"],
+  ["This game is made by GameFiare"],
+  ["This game is made by Boring Games"],
+  ["This game is made by Kongregate"],
+  ["This games is made by Wanted 5 Games"]
+]
 
 export default function Home() {
   return (
