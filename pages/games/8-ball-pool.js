@@ -1,14 +1,32 @@
+import React from "react";
 import Head from "next/head";
 import {GlobalStyle, CONSTANTS, Navbar} from "../index";
 import {Credit} from "../games";
 
-export default function Home() {
+export default function Home() { // Stap the scrolling
+    React.useEffect(() => { // Runs on client-side so `window` object is finally available
+
+        window.addEventListener("keydown", (e) => {
+            if ([
+                "ArrowLeft",
+                "ArrowUp",
+                "ArrowRight",
+                "ArrowDown",
+                "Space"
+            ].indexOf(e.key) > -1) {
+                e.preventDefault();
+            }
+        }, false);
+    });
+
     const scale = 0.90;
 
     return (
         <div className="container">
             <Head>
-                <title>8 Ball Pool| {CONSTANTS.siteName}</title>
+                <title>8 Ball Pool| {
+                    CONSTANTS.siteName
+                }</title>
                 <link rel="shortcut icon" type="image/png" href="/boringGamesLogoShortcut.png"></link>
                 <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"></link>
             </Head>
@@ -37,7 +55,8 @@ export default function Home() {
             <GlobalStyle/>
 
             <style global jsx>
-                {`
+                {
+                `
         body {  
           overflow: hidden;
         }
@@ -50,10 +69,13 @@ export default function Home() {
           -webkit-transform: scale(${scale});
           transform: scale(${scale});
         }
-      `}</style>
-      <div class="credit">
-        <p>{Credit[0][0]}</p>
-      </div>
+      `
+            }</style>
+            <div class="credit">
+                <p>{
+                    Credit[0][0]
+                }</p>
+            </div>
         </div>
     );
 }

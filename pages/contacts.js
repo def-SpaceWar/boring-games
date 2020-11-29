@@ -42,7 +42,7 @@ export default function Home() {
               <br />
               <textarea class="input" type="text" placeholder="Message" required></textarea>
               <br/>
-              <button class="sub-btn">Submit</button>
+                <button class="sub-btn">Submit</button>
             </div>
           </form>
         </div>

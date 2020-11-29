@@ -1,7 +1,27 @@
 import React from "react";
+import React from "react";
 import Head from "next/head";
 import { GlobalStyle, CONSTANTS, Navbar } from "../index";
 import {Credit} from "../games";
+
+  // Stap the scrolling
+  React.useEffect(() => {
+    // Runs on client-side so `window` object is finally available
+
+    window.addEventListener(
+      "keydown",
+      (e) => {
+        if (
+          ["ArrowLeft", "ArrowUp", "ArrowRight", "ArrowDown", "Space"].indexOf(
+            e.key
+          ) > -1
+        ) {
+          e.preventDefault();
+        }
+      },
+      false
+    );
+  });
 
 export default function Home() {
   // Stap the scrolling
