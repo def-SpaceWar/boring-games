@@ -2,8 +2,9 @@ import React from "react";
 import React from "react";
 import Head from "next/head";
 import { GlobalStyle, CONSTANTS, Navbar } from "../index";
-import {Credit} from "../games";
+import { Credit } from "../games";
 
+export default function Home() {
   // Stap the scrolling
   React.useEffect(() => {
     // Runs on client-side so `window` object is finally available
@@ -23,7 +24,6 @@ import {Credit} from "../games";
     );
   });
 
-export default function Home() {
   // Stap the scrolling
   React.useEffect(() => {
     // Runs on client-side so `window` object is finally available
